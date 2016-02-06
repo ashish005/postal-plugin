@@ -1,0 +1,82 @@
+<!-- Wrapper-->
+<div>
+    <!-- Page wraper -->
+    <!-- ng-class with current state name give you the ability to extended customization your view -->
+    <div class="gray-bg">
+
+        <!-- Page wrapper -->
+        <!--<div top-navbar></div>-->
+        <!-- Main view  -->
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2 style="text-transform: capitalize;">Checking addresses</h2>
+                <!--<ol class="breadcrumb">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="active">
+                        <strong>Layouts</strong>
+                    </li>
+                </ol>-->
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6" ng-controller="postalController as main">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h1>
+                                <small>Address Verification Form </small>
+                            </h1>
+                            <div ibox-tools></div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="form-group">
+                                <label>zip code</label>
+                                <input id="zipSearch" placeholder="Enter zip code" class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Number / registration</label>
+                                <input placeholder="Number / registration" class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label> Orientation number </label>
+                                <input placeholder="Orientation number" class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Village</label>
+                                <div class="input-group">
+                                    <select chosen id="states" class="chosen-select" style="width:350px;" tabindex="4" ng-model="main.village" ng-options="s for s in main.village"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>The village - part</label>
+                                <div class="input-group">
+                                    <select chosen class="chosen-select" style="width:350px;" tabindex="4" ng-model="main.villagePart" ng-options="s for s in main.villagePart"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Street</label>
+                                <div class="input-group">
+                                    <select chosen class="chosen-select" style="width:350px;" tabindex="4" ng-model="main.street" ng-options="s for s in main.street"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Check</strong></button>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div ap-footer></div>
+    </div>
+    <!-- End page wrapper-->
+</div>
+<!-- End wrapper-->
