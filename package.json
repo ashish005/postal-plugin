@@ -1,0 +1,27 @@
+{
+  "name": "postal-plugin",
+  "version": "1.0.0",
+  "description": "To porvide postal data on the basis of search",
+  "main": "postal-plugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashish005/postal-plugin.git"
+  },
+  "keywords": [
+    "postal/furat"
+  ],
+  "author": "Ashish Chaturvedi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashish005/postal-plugin/issues"
+  },
+  "homepage": "https://github.com/ashish005/postal-plugin#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cors": "^2.7.1",
+    "pg": "^4.4.4"
+  }
+}
