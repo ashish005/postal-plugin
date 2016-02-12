@@ -11,25 +11,30 @@
                     var _ctrlModel = this;
                     $('#zipSearch').on('input propertychange', function (e) {
                         var _val  =$.trim(e.currentTarget.value);
-                        if(_val && 6 == _val.length){
+                        if(_val && 5 <= _val.length){
                             postalInfoService.getPostalInfoByZipCode(_val).then(function(resp){
-                                _ctrlModel.village = resp;
-                                _ctrlModel.villagePart = resp;
-                                _ctrlModel.street = resp;
+                                _ctrlModel.regions = resp['data']['region'];
                             },function(){
-                                _ctrlModel.village = [];
-                                _ctrlModel.villagePart = [];
-                                _ctrlModel.street = [];
+                                _ctrlModel.regions = {};
                             });
                         }else{
-                            _ctrlModel.village = [];
-                            _ctrlModel.villagePart = [];
-                            _ctrlModel.street = [];
+                            _ctrlModel.regions = {};
                             if ($scope.$root.$$phase != '$apply' && $scope.$root.$$phase != '$digest') {
                                 $scope.$apply();
                             }
                         }
                     });
+
+                    _ctrlModel.changeRegion = function(id){
+                        this.villages = this['regions'][id]['village'];
+                    };
+
+                    _ctrlModel.changeVillage = function(id){
+                        this.villagePart = this['villages'][id]['villagePart'];
+                    };
+                    _ctrlModel.changeVillagePart = function(id){
+                        this.streets = this['villagePart'][id]['street'];
+                    };
                 }
             ])
             .service('postalInfoService', ['configUrl', 'ajaxService',

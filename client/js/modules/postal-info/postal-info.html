@@ -34,9 +34,55 @@
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
-                            <div class="form-group">
+                            <div class="form-group row col-xs-6">
                                 <label>zip code</label>
                                 <input id="zipSearch" placeholder="Enter zip code" class="form-control" type="text">
+                            </div>
+                            <div class="form-group  col-xs-6">
+                                <label>Region</label>
+                                <div class="input-group">
+                                    <!--<select tabindex="4">-->
+                                        <!--<option ng-repeat="(k, v) in main['regions']" value="{{k}}">{{v['name']}}</option>-->
+                                    <!--</select>-->
+                                    <select  id="regionId" style="width:350px;" tabindex="4" ng-model="data.regions" ng-options="key as value['name'] for (key , value) in main['regions']" ng-change="main.changeRegion(data.regions)"></select>
+                                </div>
+                            </div>
+                            <!--<div class="form-group">
+                                <label>Countries</label>
+                                <div class="input-group">
+                                    <select chosen id="countries" tabindex="4" ng-model="data.country">
+                                        <option ng-repeat="option in main.countries" value="{{option.psc}}">{{option.nazev}}</option>
+                                    </select>
+                                    &lt;!&ndash;<select chosen id="states" class="chosen-select" style="width:350px;" tabindex="4" ng-model="main.village"
+                                            ng-options="s for s in main.village"></select>&ndash;&gt;
+                                </div>
+                            </div>-->
+                            <div class="form-group">
+                                <label>Village</label>
+                                <div class="input-group">
+                                    <!--<select  id="villageId" ng-model="village" ng-options="vKey as vValue['vName'] for (vKey , vValue) in main.villages" ng-change="main.changeVillage(village)"></select>-->
+                                    <!--<select chosen id="villageId" tabindex="4" ng-model="data.villages">
+                                        <option ng-repeat="option in main.villages" value="{{option}}">{{option.name}}</option>
+                                    </select>-->
+                                    <select  id="villagesId" style="width:350px;" tabindex="4" ng-model="data.villages" ng-options="key as value['name'] for (key , value) in main['villages']" ng-change="main.changeVillage(data.villages)"></select>
+                                    <!--<select>
+                                        <option ng-repeat="(vKey, vValue) in main['villages']" value="{{vKey}}">{{vValue}}</option>
+                                    </select>-->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>The village - part</label>
+                                <div class="input-group">
+                                    <select class="chosen-select" style="width:350px;" tabindex="4" ng-model="data.villagePart"
+                                            ng-options="key as value['name'] for (key , value) in main['villagePart']"
+                                             ng-change="main.changeVillagePart(data.villagePart)"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Street</label>
+                                <div class="input-group">
+                                    <select  id="streetId" style="width:350px;" tabindex="4" ng-model="data.street" ng-options="key as value for (key , value) in main['streets']"></select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Number / registration</label>
@@ -45,24 +91,6 @@
                             <div class="form-group">
                                 <label> Orientation number </label>
                                 <input placeholder="Orientation number" class="form-control" type="text">
-                            </div>
-                            <div class="form-group">
-                                <label>Village</label>
-                                <div class="input-group">
-                                    <select chosen id="states" class="chosen-select" style="width:350px;" tabindex="4" ng-model="main.village" ng-options="s for s in main.village"></select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>The village - part</label>
-                                <div class="input-group">
-                                    <select chosen class="chosen-select" style="width:350px;" tabindex="4" ng-model="main.villagePart" ng-options="s for s in main.villagePart"></select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Street</label>
-                                <div class="input-group">
-                                    <select chosen class="chosen-select" style="width:350px;" tabindex="4" ng-model="main.street" ng-options="s for s in main.street"></select>
-                                </div>
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Check</strong></button>
